@@ -476,15 +476,58 @@ client.on("message", message => {
   if (message.content == (prefix + "brand") || message.content == prefix + 'شعار'){
     var x = [
       'https://cdn.discordapp.com/attachments/756329106953601225/776584216161812490/jW4dnFtA_400x400.png',
-      'https://cdn.discordapp.com/attachments/756329106953601225/776589087997296691/InCS8dvy_400x400.png'
+      'https://cdn.discordapp.com/attachments/756329106953601225/776589087997296691/InCS8dvy_400x400.png',
+      'https://cdn.discordapp.com/attachments/756329106953601225/776590445622329344/ocZKRu9P_400x400.png',
+      'https://cdn.discordapp.com/attachments/756329106953601225/776591027943243776/aCWlGSZF_400x400.png'
     ];
     var x2 = [
-      "جافا"
-      ""
+      "جافا",
+      "ريزر",
+      "يوتيوب",
+      "جوجل كروم"
     ];
         var x3 = Math.floor(Math.random() * x.length);
 
     message.channel.send(`${x[x3]}`)
+      .then(msg1 => {
+        var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
+          maxMatches: 1,
+          time: 20000,
+          errors: ["time"]
+        });
+        r.catch(() => {
+          return message.channel
+            .send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+         الصحيحةة هيا **${x2[x3]}**`);
+        });
+
+        r.then(collected => {
+          message.channel.send(
+            `${collected.first().author}You have solved the question🎉`
+          );
+        });
+      });
+  }
+});
+
+client.on("message", message => {
+  if (message.content == (prefix + "brand") || message.content == prefix + 'شعار'){
+    var x = [
+      'https://cdn.discordapp.com/attachments/756329106953601225/776584216161812490/jW4dnFtA_400x400.png',
+      'https://cdn.discordapp.com/attachments/756329106953601225/776589087997296691/InCS8dvy_400x400.png',
+      'https://cdn.discordapp.com/attachments/756329106953601225/776590445622329344/ocZKRu9P_400x400.png',
+      'https://cdn.discordapp.com/attachments/756329106953601225/776591027943243776/aCWlGSZF_400x400.png'
+    ];
+    var x2 = [
+      "جافا",
+      "ريزر",
+      "يوتيوب",
+      "جوجل كروم"
+    ];
+        var x3 = Math.floor(Math.random() * x.length);
+
+    message.channel.send(`${x[x3]}`)
+    message.channel.send(`**اسرع شخص يرسل اليموجي خلال __10__ ثواني**`)
       .then(msg1 => {
         var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
           maxMatches: 1,

@@ -16,6 +16,7 @@ dependencies:
   forever: 0.15.3
   fortnite: 4.3.2
   fortnite-api: 2.16.1
+  fs: 0.0.2
   get-youtube-id: 1.0.1
   giphy-api: 1.2.8
   goo.gl: 0.1.4
@@ -1923,6 +1924,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
+  /fs/0.0.2:
+    dev: false
+    resolution:
+      integrity: sha1-4fJE7zkzwbKmS9R5kTYGDQ9ZFPg=
   /fsevents/1.2.13:
     dependencies:
       bindings: 1.5.0
@@ -5302,6 +5307,7 @@ specifiers:
   forever: ^0.15.3
   fortnite: ^4.1.1
   fortnite-api: ^2.12.2
+  fs: ^0.0.2
   get-youtube-id: ^1.0.0
   giphy-api: ^1.2.7
   goo.gl: ^0.1.4

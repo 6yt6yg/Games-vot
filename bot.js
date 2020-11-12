@@ -27,6 +27,40 @@ console.log(`Logged in ${client.user.tag}!`);
 const prefix = process.env.prefix;
 
 ////////////////////|
+
+//var fson = require("fs"); // fs Package //
+let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
+ 
+client.on("message", message => {
+    if (!message.channel.guild) return;
+    if (message.author.bot) return;
+    if (!prefixes[message.guild.id]) prefixes[message.guild.id] = {
+        prefix: process.env.prefix,
+    };
+    var prefix = prefixes[message.guild.id].prefix;
+    var setp = prefixes[message.guild.id];
+    if (message.content.startsWith(prefix + 'setp')) {
+        if (!message.member.hasPermission(`MANAGE_GUILD`)) return message.reply(`**:x: Error: You do not have the required permissions: Manage Server.**`);
+ 
+        let args = message.content.split(" ").slice(1);
+ 
+        if (!args.join(" ")) return message.reply(`**:x: Error: Say The Prefix Please.**`);
+          const embed = new Discord.RichEmbed()
+ 
+       .setColor("BLACK")
+ .setTitle("Prefix Set!")
+  .setDescription(`**Set to ${args[0]}**`);
+   message.channel.send(embed);
+       setp.prefix = args.join();
+ 
+    }
+ 
+    fs.writeFile("./Database/prefix.json", JSON.stringify(prefixes), (err) => {
+        if (err) console.error(err);
+    });
+});
+
+
   client.on('message', message => {
     if(message.author.bot) return;
             if (!points[message.author.id]) points[message.author.id] = {
@@ -511,18 +545,30 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
-  if (message.content == (prefix + "brand") || message.content == prefix + 'شعار'){
+  if (message.content == (prefix + "emoji") || message.content == prefix + 'ايموجي'){
     var x = [
-      'https://cdn.discordapp.com/attachments/756329106953601225/776584216161812490/jW4dnFtA_400x400.png',
-      'https://cdn.discordapp.com/attachments/756329106953601225/776589087997296691/InCS8dvy_400x400.png',
-      'https://cdn.discordapp.com/attachments/756329106953601225/776590445622329344/ocZKRu9P_400x400.png',
-      'https://cdn.discordapp.com/attachments/756329106953601225/776591027943243776/aCWlGSZF_400x400.png'
+      "🌚",
+      "😂",
+      "🥶",
+      "😷",
+      "🌻",
+      "🌗",
+      "✨",
+      "🍐",
+      "🚗",
+      "💽"
     ];
     var x2 = [
-      "جافا",
-      "ريزر",
-      "يوتيوب",
-      "جوجل كروم"
+      "🌚",
+      "😂",
+      "🥶",
+      "😷",
+      "🌻",
+      "🌗",
+      "✨",
+      "🍐",
+      "🚗",
+      "💽"
     ];
         var x3 = Math.floor(Math.random() * x.length);
 
@@ -704,6 +750,8 @@ let embed = new Discord.RichEmbed()
 🎮 - ${prefix}capitals
 
 🎮 - ${prefix}brand
+
+🎮 - ${prefix}emoji
 ---------------------------------**`)
 .setFooter('By niro القمر')
 message.channel.send({embed:embed});

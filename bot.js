@@ -471,6 +471,41 @@ message.channel.sendFile(canvas.toBuffer());
 }
 });
 
+
+client.on("message", message => {
+  if (message.content == (prefix + "brand") || message.content == prefix + 'شعار'){
+    var x = [
+    ];
+    var x2 = [
+    ];
+
+    var x3 = Math.floor(Math.random() * x.length);
+    message.channel
+      .send(
+        `**${x[x3]}**
+You have 20 seconds to answer the question`
+      )
+      .then(msg1 => {
+        var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
+          maxMatches: 1,
+          time: 20000,
+          errors: ["time"]
+        });
+        r.catch(() => {
+          return message.channel
+            .send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+         الصحيحةة هيا **${x2[x3]}**`);
+        });
+
+        r.then(collected => {
+          message.channel.send(
+            `${collected.first().author}You have solved the question🎉`
+          );
+        });
+      });
+  }
+});
+
 client.on('message', message => {
       if(message.author.bot) return;
 if (message.content.startsWith(prefix + 'top') || message.content.startsWith(prefix+'توب')) {

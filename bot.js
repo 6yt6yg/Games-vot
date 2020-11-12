@@ -6,7 +6,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://NameProject.glitch.me/`);
+  http.get(`http://.glitch.me/`);
 }, 280000);
 
 ////////////////////
@@ -24,7 +24,7 @@ console.log(`Logged in ${client.user.tag}!`);
 });  
 /////////////////////|
 
-const prefix = '#' //البريفكس أو امر التشغيل
+const prefix = process.env.prefix;
 
 ////////////////////|
   client.on('message', message => {
@@ -35,7 +35,7 @@ const prefix = '#' //البريفكس أو امر التشغيل
               if (message.content.startsWith(prefix + 'فكك') || message.content.startsWith(prefix+"fkk")) {
                 if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 
-              const type = require('./fkk.json');
+              const type = require('./GamesData/fkk.json');
               const item = type[Math.floor(Math.random() * type.length)];
            let author = message.author;
               const filter = response => {
@@ -44,7 +44,7 @@ const prefix = '#' //البريفكس أو امر التشغيل
               };
               message.channel.send('**لديك __15__ ثانيه لتفكيك الكلمه**').then(msg => {
 
- const w = ['./img/w1.png'];//الخلفيه
+ const w = ['./img/photo.png'];//الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
@@ -97,15 +97,10 @@ message.channel.sendFile(canvas.toBuffer());
                     console.log('[Typing] Error: No one type the word.');
            
                   })
-                })
-             
+                })   
   })
 }
-
 });
-
-
-
 
 client.on('message', message => {
 	 if(message.author.bot) return;
@@ -114,13 +109,13 @@ client.on('message', message => {
            };if (message.content.startsWith(prefix + 'لغز') || message.content.startsWith(prefix+"puzzle")) {
 	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
 
-const type = require('./quiz.json');
+const type = require('./GamesData/quiz.json');
 const item = type[Math.floor(Math.random() * type.length)];
 const filter = response => {
     return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 };
 message.channel.send('**لديك __15__ ثانيه لحل هذه اللغز**').then(msg => {
- const w = ['./img/w1.png'];//الخلفيه
+ const w = ['./img/photo.png'];//الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
@@ -174,12 +169,9 @@ message.channel.sendFile(canvas.toBuffer());
            
                   })
                 })
-             
-  })
+             })
 }
-
 });
-
 
 client.on('message', message => {
 	 if(message.author.bot) return;
@@ -189,13 +181,13 @@ client.on('message', message => {
     if (message.content.startsWith(prefix+ 'ركب') || message.content.startsWith(prefix+"rkb")) {
       if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
     
-    const type = require('./rkb.json');
+    const type = require('./GamesData/rkb.json');
     const item = type[Math.floor(Math.random() * type.length)];
     const filter = response => {
         return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
     };
     message.channel.send('**لديك __15__ ثانيه لتركيب الكلمه**').then(msg => {
- const w = ['./img/w1.png'];//الخلفيه
+ const w = ['./img/photo.png'];//الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
@@ -249,17 +241,9 @@ message.channel.sendFile(canvas.toBuffer());
            
                   })
                 })
-             
-  })
+             })
 }
-
 });
-
-
-
-
-
-
 
 client.on('message', message => {
 	 if(message.author.bot) return;
@@ -269,14 +253,14 @@ client.on('message', message => {
       if (message.content.startsWith(prefix + 'اسرع') ||  message.content.startsWith(prefix+"fast")) {
         if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
       
-      const type = require('./type.json');
+      const type = require('./GamesData/type.json');
       const item = type[Math.floor(Math.random() * type.length)];
       const filter = response => {
           return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
       };
       message.channel.send('** لديك __15__ ثانيه لكتابه هذه الكلمه بسرعة**').then(msg => {
       
- const w = ['./img/w1.png'];//الخلفيه
+ const w = ['./img/photo.png'];//الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
@@ -330,14 +314,9 @@ message.channel.sendFile(canvas.toBuffer());
            
                   })
                 })
-             
-  })
+             })
 }
-
 });
-
-
-
 
  client.on('message', message => {
 	  if(message.author.bot) return;
@@ -347,13 +326,13 @@ message.channel.sendFile(canvas.toBuffer());
     if (message.content.startsWith(prefix + 'رياضيات') || message.content.startsWith(prefix+"math")) {
       if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
     
-    const type = require('./math.json');
+    const type = require('./GamesData/math.json');
     const item = type[Math.floor(Math.random() * type.length)];
     const filter = response => {
         return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
     };
     message.channel.send('**لديك __15__ ثانيه لحل المسئله**').then(msg => {
- const w = ['./img/w1.png'];//الخلفيه
+ const w = ['./img/photo.png'];//الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
@@ -413,26 +392,13 @@ message.channel.sendFile(canvas.toBuffer());
            
                   })
                 })
-             
-  })
+             })
 }
-
 });
-
-
-
-
-
-
-
-
-
-
-
 
 client.on('message', message => {
       if(message.author.bot) return;
-if (message.content.startsWith(prefix + 'top')) {
+if (message.content.startsWith(prefix + 'top') || message.content.startsWith(prefix+'توب')) {
     let _top = 1;
      let topp = Object.values(points);
  let top = topp.slice(0, 10).map(users => `**\`.${_top++}\` | <@${users.id}> \`Points: ${users.points}\`**`).sort((a, b) => a > b).join('\n');
@@ -443,8 +409,7 @@ if (message.content.startsWith(prefix + 'top')) {
    
   	message.channel.sendEmbed(prefixlor)
 }
-  
-});
+  });
 
 client.on('message', message => {
       if(message.author.bot) return;
@@ -458,11 +423,6 @@ if (message.content.startsWith(prefix + 'نقاطي') || message.content.startsW
 	message.channel.sendEmbed(embed)
   }
 });
-
-
-
-
-   
 
 client.on('message' , message => {
   if(message.author.bot) return;
@@ -562,14 +522,13 @@ reaction2.on("collect", r => {
 reaction3.on("collect", r => {
         message.channel.send(result)
 })
- 
     })
 }
 });
 
-client.on('message', luxy => { 
-if (luxy.author.bot) return;
-if (luxy.content === prefix+"help") {
+client.on('message', message => { 
+if (message.author.bot) return;
+if (message.content === prefix+"help") {
 let embed = new Discord.RichEmbed()
 
 .setColor("GREEN")
@@ -589,9 +548,9 @@ let embed = new Discord.RichEmbed()
 
 🎮 - ${prefix}rps
 ---------------------------------**`)
-.setFooter('Copy Right Reserved For: TC & MG')
-luxy.channel.send({embed:embed});
+.setFooter('By niro القمر')
+message.channel.send({embed:embed});
 }
 });
 
-client.login(process.env.MG_TOKEN);
+client.login(process.env.token);

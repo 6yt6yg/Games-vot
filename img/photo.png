@@ -1,0 +1,3 @@
+const niro.env.ii;
+run: niro.start
+bot.js

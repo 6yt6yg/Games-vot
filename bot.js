@@ -16,7 +16,7 @@ const client = new Discord.Client();
 const fs = require("fs"); 
 const Canvas = require("canvas");
 const jimp = require("jimp");
-  let points = {}
+  let points = JSON.parse(fs.readFileSync("./Database/points.json", "utf8"));
 
 //////////////////////
 client.on('ready', () => {

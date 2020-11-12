@@ -44,7 +44,7 @@ const prefix = process.env.prefix;
               };
               message.channel.send('**لديك __15__ ثانيه لتفكيك الكلمه**').then(msg => {
 
- const w = ['./img/photo.png'];//الخلفيه
+ const w = ['./img/photo.png']; //الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');

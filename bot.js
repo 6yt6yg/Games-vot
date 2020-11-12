@@ -44,7 +44,7 @@ const prefix = process.env.prefix;
               };
               message.channel.send('**لديك __15__ ثانيه لتفكيك الكلمه**').then(msg => {
 
- const w = ['./img/photo.png']; //الخلفيه
+ const w = ['./img.png']; //الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
@@ -115,7 +115,7 @@ const filter = response => {
     return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 };
 message.channel.send('**لديك __15__ ثانيه لحل هذه اللغز**').then(msg => {
- const w = ['./img/photo.png'];//الخلفيه
+ const w = ['./img.png'];//الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
@@ -145,10 +145,10 @@ message.channel.send('**لديك __15__ ثانيه لحل هذه اللغز**').
                               let ava = new Avatar;
                               ava.src = buf;
                               ctx.beginPath();
-                              ctx.arc(70, 80, 63, 0, Math.PI*2);
+                              ctx.arc(0, 0, 0, 0, Math.PI*2);
                                  ctx.closePath();
                                  ctx.clip();
-                                 ctx.drawImage(ava, 8, 18, 128, 126);   
+                                 ctx.drawImage(ava, 0, 0, 0, 0);   
 message.channel.sendFile(canvas.toBuffer());
  })
              
@@ -187,7 +187,7 @@ client.on('message', message => {
         return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
     };
     message.channel.send('**لديك __15__ ثانيه لتركيب الكلمه**').then(msg => {
- const w = ['./img/photo.png'];//الخلفيه
+ const w = ['./img.png'];//الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
@@ -217,10 +217,10 @@ client.on('message', message => {
                               let ava = new Avatar;
                               ava.src = buf;
                               ctx.beginPath();
-                              ctx.arc(70, 80, 63, 0, Math.PI*2);
+                              ctx.arc(0, 0, 0, 0, Math.PI*2);
                                  ctx.closePath();
                                  ctx.clip();
-                                 ctx.drawImage(ava, 8, 18, 128, 126);   
+                                 ctx.drawImage(ava, 0, 0, 0, 0);   
 message.channel.sendFile(canvas.toBuffer());
  })
              
@@ -260,7 +260,7 @@ client.on('message', message => {
       };
       message.channel.send('** لديك __15__ ثانيه لكتابه هذه الكلمه بسرعة**').then(msg => {
       
- const w = ['./img/photo.png'];//الخلفيه
+ const w = ['./img.png'];//الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
@@ -290,10 +290,10 @@ client.on('message', message => {
                               let ava = new Avatar;
                               ava.src = buf;
                               ctx.beginPath();
-                              ctx.arc(70, 80, 63, 0, Math.PI*2);
+                              ctx.arc(0, 0, 0, 0, Math.PI*2);
                                  ctx.closePath();
                                  ctx.clip();
-                                 ctx.drawImage(ava, 8, 18, 128, 126);   
+                                 ctx.drawImage(ava, 0, 0, 0, 0);   
 message.channel.sendFile(canvas.toBuffer());
  })
              
@@ -332,7 +332,7 @@ message.channel.sendFile(canvas.toBuffer());
         return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
     };
     message.channel.send('**لديك __15__ ثانيه لحل المسئله**').then(msg => {
- const w = ['./img/photo.png'];//الخلفيه
+ const w = ['./img.png'];//الخلفيه
             let Image = Canvas.Image,
             canvas = new Canvas(400, 150),
             ctx = canvas.getContext('2d');
@@ -362,10 +362,10 @@ message.channel.sendFile(canvas.toBuffer());
                               let ava = new Avatar;
                               ava.src = buf;
                               ctx.beginPath();
-                              ctx.arc(70, 80, 63, 0, Math.PI*2);
+                              ctx.arc(0, 0, 0, 0, Math.PI*2);
                                  ctx.closePath();
                                  ctx.clip();
-                                 ctx.drawImage(ava, 8, 18, 128, 126);   
+                                 ctx.drawImage(ava, 0, 0, 0, 0);   
 message.channel.sendFile(canvas.toBuffer());
  })
              

@@ -446,7 +446,7 @@ message.channel.sendFile(canvas.toBuffer());
                               ctx.arc(70, 80, 63, 0, Math.PI*2);
                                  ctx.closePath();
                                  ctx.clip();
-                                 ctx.drawImage(ava, 8, 18, 128, 126);   
+                                 ctx.drawImage(ava, 0, 0, 0, 0);   
 message.channel.sendFile(canvas.toBuffer());
  })
              

@@ -475,8 +475,10 @@ message.channel.sendFile(canvas.toBuffer());
 client.on("message", message => {
   if (message.content == (prefix + "brand") || message.content == prefix + 'شعار'){
     var x = [
+      'https://cdn.discordapp.com/attachments/756329106953601225/776584216161812490/jW4dnFtA_400x400.png'
     ];
     var x2 = [
+      "جافا"
     ];
 
     var x3 = Math.floor(Math.random() * x.length);
@@ -657,6 +659,10 @@ let embed = new Discord.RichEmbed()
 🎮 - ${prefix}xo
 
 🎮 - ${prefix}rps
+
+🎮 - ${prefix}capitals
+
+🎮 - ${prefix}brand
 ---------------------------------**`)
 .setFooter('By niro القمر')
 message.channel.send({embed:embed});

@@ -64,7 +64,6 @@ client.on("message", message => {
   });
 });
 
-
 client.on("message", message => {
   if (!prefixes[message.guild.id])
     prefixes[message.guild.id] = {
@@ -734,11 +733,23 @@ client.on("message", message => {
     message.content == prefix + "flag" ||
     message.content == prefix + "اعلام"
   ) {
-    var x = ["1","1"];
-    var x2 = ["2","2"];
+    var x = ["https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/256px-Flag_of_Brazil.svg.png",
+             "",
+             "",
+             "",
+             "",
+             "",
+             "",
+             ""
+            ];
+    var x2 = ["البرازيل"];
     var x3 = Math.floor(Math.random() * x.length);
-    message.channel.send(`${x[x3]}`)
-    message.channel.send(`**اسرع شخص يرسل اليموجي خلال __10__ ثواني**`)
+    var args = message.content.split(" ").slice(1);
+    var lo = new Discord.RichEmbed()
+    .setImage(`${x[x3]}`)
+    .setTitle(`**اسرع شخص يرسل اليموجي خلال __10__ ثواني**`);
+    message.channel.sendEmbed(lo);
+    message.channel.send("")
       .then(msg1 => {
         var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
           maxMatches: 1,
@@ -763,7 +774,6 @@ fs.writeFile("./Database/prefix.json", JSON.stringify(prefixes), err => {
   if (err) console.error(err);
 });
 
-
 client.on("message", message => {
   if (!prefixes[message.guild.id])
     prefixes[message.guild.id] = {
@@ -778,8 +788,9 @@ client.on("message", message => {
     var x = ["🌚", "😂", "🥶", "😷", "🌻", "🌗", "✨", "🍐", "🚗", "💽"];
     var x2 = ["🌚", "😂", "🥶", "😷", "🌻", "🌗", "✨", "🍐", "🚗", "💽"];
     var x3 = Math.floor(Math.random() * x.length);
-    message.channel.send(`${x[x3]}`)
-    message.channel.send(`**اسرع شخص يرسل اليموجي خلال __10__ ثواني**`)
+    message.channel.send(`${x[x3]}`);
+    message.channel
+      .send(`**اسرع شخص يرسل اليموجي خلال __10__ ثواني**`)
       .then(msg1 => {
         var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
           maxMatches: 1,

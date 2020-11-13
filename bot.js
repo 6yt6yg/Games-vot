@@ -697,7 +697,13 @@ client.on("message", message => {
     ];
     var x2 = ["جافا", "ريزر", "يوتيوب", "جوجل كروم"];
     var x3 = Math.floor(Math.random() * x.length);
+var brand = new Discord.RichEmbed()
 
+    .setImage(`${x[x3]}`)
+
+    .setTitle(`**اسرع شخص يرسل الاشعار خلال __10__ ثواني**`);
+
+    message.channel.sendEmbed(brand);
     message.channel.send(`${x[x3]}`).then(msg1 => {
       var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
         maxMatches: 1,
@@ -734,23 +740,25 @@ client.on("message", message => {
     message.content == prefix + "اعلام"
   ) {
     var x = ["https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/256px-Flag_of_Brazil.svg.png",
-             "",
-             "",
-             "",
+             "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/256px-Flag_of_Jordan.svg.png",
              "",
              "",
              "",
              ""
             ];
-    var x2 = ["البرازيل"];
+    var x2 = ["البرازيل",
+              "",
+              "",
+              "",
+              "",
+              ""
+             ];
     var x3 = Math.floor(Math.random() * x.length);
-    var args = message.content.split(" ").slice(1);
-    var lo = new Discord.RichEmbed()
+    var flag = new Discord.RichEmbed()
     .setImage(`${x[x3]}`)
-    .setTitle(`**اسرع شخص يرسل اليموجي خلال __10__ ثواني**`);
-    message.channel.sendEmbed(lo);
-    message.channel.send("")
-      .then(msg1 => {
+    .setTitle(`**اسرع شخص يرسل العلم خلال __10__ ثواني**`);
+    message.channel.sendEmbed(flag);
+    message.channel.send(`${x[x3]}`).then(msg1 => {
         var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
           maxMatches: 1,
           time: 20000,

@@ -1065,7 +1065,7 @@ client.on("message", message => {
 
 🎮 - ${prefix}emoji
 
-🎮 - ${prefix}cut
+🎮 - ${prefix}flag
 
 🛠️ - ${prefix}top
 

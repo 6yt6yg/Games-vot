@@ -737,10 +737,8 @@ client.on("message", message => {
     var x = ["🌚", "😂", "🥶", "😷", "🌻", "🌗", "✨", "🍐", "🚗", "💽"];
     var x2 = ["🌚", "😂", "🥶", "😷", "🌻", "🌗", "✨", "🍐", "🚗", "💽"];
     var x3 = Math.floor(Math.random() * x.length);
-
-    message.channel.send(`${x[x3]}`);
-    message.channel
-      .send(`**اسرع شخص يرسل اليموجي خلال __10__ ثواني**`)
+    message.channel.send(`${x[x3]}`)
+    message.channel.send(`**اسرع شخص يرسل اليموجي خلال __10__ ثواني**`)
       .then(msg1 => {
         var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
           maxMatches: 1,

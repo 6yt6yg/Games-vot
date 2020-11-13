@@ -6,7 +6,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://.glitch.me/`);
+  http.get(`http://niro-games.glitch.me/`);
 }, 280000);
 
 ////////////////////
@@ -16,7 +16,7 @@ const client = new Discord.Client();
 const fs = require("fs");
 const Canvas = require("canvas");
 const jimp = require("jimp");
-let points = JSON.parse(fs.readFileSync("./Database/points.json", "utf8"));
+const points = JSON.parse(fs.readFileSync("./Database/points.json", "utf8"));
 
 //////////////////////
 client.on("ready", () => {
@@ -97,11 +97,11 @@ const cuttweets = [
 
 client.on("message", async msg => {
   if (!prefixes[msg.guild.id])
-    prefixes[message.guild.id] = {
+    prefixes[msg.guild.id] = {
       prefix: process.env.PREFIX
     };
 
-  var prefix = prefixes[message.guild.id].prefix;
+  var prefix = prefixes[msg.guild.id].prefix;
   if (!msg.guild || msg.author.bot) return false;
   switch (msg.cntent.split(" ")[0]) {
     case prefix + "cut":

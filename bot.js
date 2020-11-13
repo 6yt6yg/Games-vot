@@ -741,16 +741,12 @@ client.on("message", message => {
   ) {
     var x = ["https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_Brazil.svg/256px-Flag_of_Brazil.svg.png",
              "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_Jordan.svg/256px-Flag_of_Jordan.svg.png",
-             "",
-             "",
-             "",
+             "https://cdn.discordapp.com/attachments/756329106953601225/776908227476062258/images_4.png",
              ""
             ];
     var x2 = ["البرازيل",
-              "",
-              "",
-              "",
-              "",
+              "السودان",
+              "مصر",
               ""
              ];
     var x3 = Math.floor(Math.random() * x.length);
@@ -766,13 +762,13 @@ client.on("message", message => {
         });
         r.catch(() => {
           return message.channel
-            .send(`:negative_squared_cross_mark: لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
-         الصحيحةة هيا **${x2[x3]}**`);
+            .send(`:negative_squared_cross_mark: **لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+         الصحيحةة هيا** ***${x2[x3]}***`);
         });
 
         r.then(collected => {
           message.channel.send(
-            `${collected.first().author}لقد قمت بالاجابه بشكل صحيح و 100 100`
+            `${collected.first().author}**لقد قمت بالاجابه بشكل صحيح**`
           );
         });
       });

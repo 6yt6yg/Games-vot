@@ -6,7 +6,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://niro-games.glitch.me/`);
+  http.get(`http://ng-games.glitch.me/`);
 }, 280000);
 
 ////////////////////
@@ -39,7 +39,7 @@ const stat = process.env.STATUS;
 
 //var fs = require("fs"); // fs Package //
 let prefixes = JSON.parse(fs.readFileSync("./prefix.json", "utf8"));
-const dol = "NIRO DEVELOPMENT";
+const dol = "NAJMOU DEVELOPMENT";
 client.on("message", message => {
   if (!message.channel.guild) return;
   if (message.author.bot) return;

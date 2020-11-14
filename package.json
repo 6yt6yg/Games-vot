@@ -5,9 +5,9 @@
   "main": "bot.js",
   "repository": {
     "type": "git",
-    "url": "https://glitch.com/edit/#!/niro-games"
+    "url": "https://glitch.com/edit/#!/ng-games"
   },
-  "author": "NIRO",
+  "author": "NAJMOU",
   "license": "MIT",
   "bugs": {
     "url": ""

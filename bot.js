@@ -1279,6 +1279,49 @@ fs.writeFile("./Database/prefix.json", JSON.stringify(prefixes), err => {
   if (err) console.error(err);
 });
 
+
+client.on("message", message => {
+  if (!prefixes[message.guild.id])
+    prefixes[message.guild.id] = {
+      prefix: process.env.PREFIX
+    };
+
+  var prefix = prefixes[message.guild.id].prefix;
+  if (
+    message.content == prefix + "translation" ||
+    message.content == prefix + "ترجمه"
+  ) {
+    var x = ["Constantinople","Clever","apple","day","browser","cocked","Tomatoes","Connect","coconut"];
+    var x2 = ["القسطنطينيه","ذكي","تفاح","يوم","متصفح","مطبوخ","طماطم","اتصال","ك"];
+    var x3 = Math.floor(Math.random() * x.length);
+      var emoji = new Discord.RichEmbed()
+    .setTitle(`** لديك __10 ثواني__ لكتابة الترجمه**`)
+    .addField (`${x[x3]}`)
+    message.channel.sendEmbed(emoji).then(msg1 => {
+        var r = message.channel.awaitMessages(msg => msg.content == x2[x3], {
+          maxMatches: 1,
+          time: 20000,
+          errors: ["time"]
+        });
+        r.catch(() => {
+          return message.channel
+            .send(`:negative_squared_cross_mark:** لقد انتهى الوقت ولم يقم أحد بالأجابة بشكل صحيح 
+       الصحيحة هيا __${x2[x3]}__ **`);
+        });
+
+        r.then(collected => {
+          message.channel.send(
+            `${collected.first().author} ** لقد قمت بكتابة الايموجي في الوقت المناسب **`
+          );
+    
+        });
+      });
+  }
+});
+fs.writeFile("./Database/prefix.json", JSON.stringify(prefixes), err => {
+  if (err) console.error(err);
+});
+
 client.on("message", message => {
   if (!prefixes[message.guild.id])
     prefixes[message.guild.id] = {
@@ -1324,6 +1367,8 @@ client.on("message", message => {
 
 🎮 - ${prefix}sara7a - صراحه
 
+🎮 - ${prefix}tanslation - ترجمه
+
 🛠️ - ${prefix}top - توب
 
 🛠️ - ${prefix}points - نقاطي
@@ -1334,7 +1379,7 @@ client.on("message", message => {
 ---------------------------------**`
       )
       .setFooter(`${dol}`);
-    message.channel.send({ embed: embed });
+    message.reply({ embed: embed });
   }
 });
 fs.writeFile("./Database/prefix.json", JSON.stringify(prefixes), err => {
